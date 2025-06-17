@@ -29,5 +29,7 @@ jobs:
         run: poetry install --no-root --quiet
       - name: Validate
         run: poetry check
+      - name: Type check
+        run: poetry run mypy mds3loader
       - name: Test
-        run: poetry run pytest -q
+        run: poetry run pytest --cov=mds3loader --cov-fail-under=80 -q
