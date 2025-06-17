@@ -30,4 +30,4 @@ jobs:
       - name: Validate
         run: poetry check
       - name: Test
-        run: pytest -q
+        run: poetry run pytest -q
