@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "nmds3loader"
+version = "0.1.0"
+description = "A reproducible Python environment"
+authors = ["Developer <dev@example.com>"]
+packages = [
+    { include = "mds3loader", from = "mds3loader" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
