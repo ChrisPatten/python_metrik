@@ -1,0 +1,7 @@
+[
+  {"name": "id", "type": "NUMBER", "nullable": false},
+  {"name": "name", "type": "STRING", "nullable": false},
+  {"name": "birth_date", "type": "DATE", "nullable": false},
+  {"name": "salary", "type": "FLOAT", "nullable": false},
+  {"name": "is_active", "type": "BOOLEAN", "nullable": false}
+]
