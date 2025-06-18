@@ -6,7 +6,7 @@ import csv
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import Dict, List, Optional
 
 
 @dataclass
@@ -46,7 +46,9 @@ def infer_schema(path: Path) -> List[Column]:
 
     with path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        columns = {name: None for name in reader.fieldnames or []}
+        columns: Dict[str, Optional[str]] = {
+            name: None for name in reader.fieldnames or []
+        }
         nullables = {name: False for name in reader.fieldnames or []}
         for row in reader:
             for name, value in row.items():
